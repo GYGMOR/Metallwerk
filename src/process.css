@@ -1,0 +1,64 @@
+/* Process Section */
+.process {
+  padding: 8rem 0;
+  background-color: var(--color-light-gray);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  margin-top: 5rem;
+}
+
+.process-step {
+  position: relative;
+}
+
+/* Subtle connecting line for steps (desktop only) */
+.process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  right: -2rem;
+  width: 2rem;
+  height: 1px;
+  background-color: var(--color-steel-light);
+  opacity: 0.5;
+}
+
+.step-number {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--color-gray-border);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-heading);
+  transition: color 0.4s ease;
+  letter-spacing: -2px;
+}
+
+.process-step:hover .step-number {
+  color: var(--color-accent-orange);
+}
+
+.step-title {
+  font-size: 1.35rem;
+  color: var(--color-anthracite-dark);
+  margin-bottom: 1rem;
+}
+
+.step-text {
+  color: var(--color-steel-gray);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .process-grid { grid-template-columns: repeat(2, 1fr); gap: 4rem 2rem; }
+  .process-step:not(:last-child)::after { display: none; }
+}
+
+@media (max-width: 768px) {
+  .process-grid { grid-template-columns: 1fr; }
+}

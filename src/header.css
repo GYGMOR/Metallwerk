@@ -1,0 +1,114 @@
+/* Header & Navigation */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-gray-border);
+  transition: var(--transition-smooth);
+}
+
+.site-header.scrolled {
+  height: 70px;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-anthracite-dark);
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--gradient-dark-metal);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-icon::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: rotate(45deg);
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.main-nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-steel-gray);
+  transition: var(--transition-fast);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.main-nav a:hover {
+  color: var(--color-anthracite-dark);
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-accent-orange);
+  transition: var(--transition-smooth);
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+.header-actions .btn {
+  padding: 0.6rem 1.5rem;
+  background-color: var(--color-anthracite-dark);
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 2px;
+  transition: var(--transition-fast);
+  border: 1px solid var(--color-anthracite-dark);
+}
+
+.header-actions .btn:hover {
+  background-color: var(--color-accent-orange);
+  border-color: var(--color-accent-orange);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 992px) {
+  .main-nav {
+    display: none;
+  }
+}
